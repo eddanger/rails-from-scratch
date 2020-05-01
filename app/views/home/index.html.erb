@@ -1,1 +1,46 @@
-<h1>Hello World!</h1>
+
+<p>
+  I haven't created a brand new rails application from scratch in quite a long
+  time. This is my attempt at creating a new rails app with the intention of
+  setting up a basic app with authentication, and trying out some new Rails
+  features.
+</p>
+
+<div class="text-center mt-6">
+  <a href="https://github.com/eddanger/rails-from-scratch"><img class="inline-block" src="https://github.com/eddanger/rails-from-scratch/workflows/Run%20Specs/badge.svg"/></a>
+</div>
+
+<h2>The beginning</h2>
+
+<p>Set up a new <a href="https://rubyonrails.org/">Ruby on Rails</a> application with <a href="https://www.postgresql.org/">PostgreSQL</a> and <a href="https://stimulusjs.org/">Stimulus</a><p>
+
+<code class="block bg-gray-200 p-3 whitespace-pre m-6">rails new rails-from-scratch --webpack=stimulus -T -d postgresql</code>
+
+<h2>The basics</h2>
+
+<p>Add <a href="https://rspec.info/">RSpec</a>, becaue that is the test framework I like.</p>
+
+<p>Setup <a href="https://github.com/features/actions">Github Action</a> with caching to run the test suite workflow on each push to Github. See this app's <a href="https://github.com/eddanger/rails-from-scratch/blob/master/.github/workflows/specs.yml">workflow setup</a> to get an idea of how the continuous integration runs after each push to master.</p>
+
+<p>Add <a href="https://tailwindcss.com">Tailwind CSS</a> for simple basic styles without fighting.</p>
+
+<p>Add <a href="https://github.com/heartcombo/devise">Devise</a> athentication so I can have user log in!</p>
+
+<h2>Dockerize this app</h2>
+
+<p>Docker Compose to set up and run a Rails/PostgreSQL app. This will help get the app up and running on different development machines as well as packacking up this app for smooth deploys.</p>
+
+<code class="block bg-gray-200 p-3 whitespace-pre m-6">docker-compose build
+docker-compose run web rails db:setup
+docker-compose up
+</code>
+
+<h2>Deploy to Heroku</h2>
+
+<p>Using the Docker image we created (and updated with docker-compose build) we can now deploy to <a href="https://heroku.com">Heroku</a>
+This app is on the Free plan and will go to sleep after 30 minutes, so it may take a while to wake up.</p>
+
+<code class="block bg-gray-200 p-3 whitespace-pre m-6">heroku container:push web -a rails-from-scratch
+heroku container:release web -a rails-from-scratch
+heroku run rake db:migrate -a rails-from-scratch
+</code>

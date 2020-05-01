@@ -3,11 +3,17 @@
     <span class="font-semibold text-xl tracking-tight">Rails From Scratch</span>
   </div>
   <div class="block flex-grow flex items-center w-auto">
-    <div class="text-sm flex-grow">
+    <div class="flex-grow">
       <%= link_to 'Home', root_path, class: 'inline-block mt-0 text-teal-200 hover:text-white mr-4' %>
     </div>
     <div>
-      <%= link_to 'Button', root_path, class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-0' %>
+      <% if user_signed_in? %>
+        <%= link_to current_user.email, edit_user_registration_path, class: 'inline-block mt-0 text-teal-200 hover:text-white mr-4' %>
+        <%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'inline-block mt-0 text-teal-200 hover:text-white mr-4' %>
+      <% else %>
+        <%= link_to 'Sign in', new_user_session_path, class: 'inline-block mt-0 text-teal-200 hover:text-white mr-4' %>
+        <%= link_to 'Sign up', new_user_registration_path, class: 'inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-0' %>
+      <% end %>
     </div>
   </div>
 </nav>

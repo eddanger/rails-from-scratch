@@ -1,0 +1,48 @@
+<div class="w-full max-w-xs mx-auto">
+  <h2 class="text-center">Log In</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "bg-white mb-4 px-8 pt-6 pb-8 rounded shadow-md" }) do |f| %>
+    <%= devise_simple_error_messages! %>
+
+    <% if flash.present? %>
+      <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-4" role="alert">
+        <p class="font-bold">Oh snap!</p>
+        <%- flash.each do |name, msg| -%>
+          <%= content_tag :p, msg.humanize, id: "flash_#{name}" if msg.is_a?(String) %>
+        <%- end -%>
+      </div>
+    <% end %>
+
+    <div class="mb-4">
+      <%= f.label :email, class: "form-label" %>
+      <%= f.email_field :email,
+        autofocus: true,
+        autocomplete: "email",
+        class: "form-input"
+      %>
+    </div>
+
+    <div class="mb-4">
+      <%= f.label :password, class: "form-label" %>
+      <%= f.password_field :password,
+        autocomplete: "password",
+        class: "form-input"
+      %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="mb-4">
+        <%= f.check_box :remember_me, class: "mr-2 leading-tight" %>
+        <%= f.label :remember_me,
+          class: "form-label-inline"
+        %>
+      </div>
+    <% end %>
+
+    <div class="mb-4">
+      <%= f.submit "Log in", class: "btn-blue w-full" %>
+    </div>
+
+    <%= render "devise/shared/links" %>
+  <% end %>
+</div>

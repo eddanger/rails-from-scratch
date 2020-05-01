@@ -2,4 +2,35 @@
 
 @tailwind components;
 
+a { @apply text-blue-500; }
+a:hover { @apply text-blue-800; }
+
+h2 {
+  @apply text-teal-800 text-lg font-medium mt-6 mb-3;
+}
+
+.btn-blue {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+}
+
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+.form-label {
+  @apply block text-teal-700 font-medium mb-2;
+}
+
+.form-label-inline {
+  @apply align-baseline inline-block text-teal-700 font-medium;
+}
+
+.form-input {
+  @apply shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
+}
+
+.form-input:focus {
+  @apply outline-none shadow-outline;
+}
+
 @tailwind utilities;
