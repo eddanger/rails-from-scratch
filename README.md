@@ -17,8 +17,11 @@ Add [RSpec][], because that is the test framework I like.
 
 Setup [Github Actions] to run the test suite workflow on each push to Github. See this app's [workflow setup](https://github.com/eddanger/rails-from-scratch/blob/master/.github/workflows/specs.yml).
 
+Add [Tailwind CSS] for simple basic styles without fighting.
+
 [Ruby on Rails]: https://rubyonrails.org/
 [RSpec]: https://rspec.info/
 [PostgreSQL]: https://www.postgresql.org/
 [Stimulus]: https://stimulusjs.org/
 [Github Actions]: https://github.com/features/actions
+[Tailwind CSS]: https://tailwindcss.com
