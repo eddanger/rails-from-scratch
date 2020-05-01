@@ -17,7 +17,7 @@ Set up a new [Ruby on Rails] application with [PostgreSQL] and [Stimulus]
 
 Add [RSpec], because that is the test framework I like.
 
-Setup [Github Actions] to run the test suite workflow on each push to Github. See this app's [workflow setup](https://github.com/eddanger/rails-from-scratch/blob/master/.github/workflows/specs.yml).
+Setup [Github Actions] with caching to run the test suite workflow on each push to Github. See this app's [workflow setup](https://github.com/eddanger/rails-from-scratch/blob/master/.github/workflows/specs.yml).
 
 Add [Tailwind CSS] for simple basic styles without fighting.
 
