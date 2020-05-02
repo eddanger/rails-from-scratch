@@ -30,3 +30,11 @@ Add [Devise] authentication so I can have user log in!
 [Github Actions]: https://github.com/features/actions
 [Tailwind CSS]: https://tailwindcss.com
 [Devise]: https://github.com/heartcombo/devise
+
+## Dockerize this App
+
+Docker Compose to set up and run a Rails/PostgreSQL app.
+
+        docker-compose build
+        docker-compose run web rails db:setup
+        docker-compose up
