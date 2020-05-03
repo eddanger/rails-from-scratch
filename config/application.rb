@@ -31,5 +31,10 @@ module RailsFromScratch
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # For UUID: https://github.com/rails/rails/pull/37583
+    config.generators do |g|
+      g.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
