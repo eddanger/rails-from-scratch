@@ -23,6 +23,8 @@ Add [Tailwind CSS] for simple basic styles without fighting.
 
 Add [Devise] authentication so I can have user log in!
 
+Add [ViewComponent] for building view components that are reusable, testable & encapsulated, in Ruby on Rails.
+
 [Ruby on Rails]: https://rubyonrails.org/
 [RSpec]: https://rspec.info/
 [PostgreSQL]: https://www.postgresql.org/
@@ -30,6 +32,7 @@ Add [Devise] authentication so I can have user log in!
 [Github Actions]: https://github.com/features/actions
 [Tailwind CSS]: https://tailwindcss.com
 [Devise]: https://github.com/heartcombo/devise
+[ViewComponent] https://github.com/github/view_component
 
 ## Dockerize this app
 
